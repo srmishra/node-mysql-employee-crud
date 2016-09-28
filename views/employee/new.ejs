@@ -1,0 +1,42 @@
+<%- include ../layouts/header.ejs %>
+
+<% if(errors.length){ %>
+<div class="alert-message error">
+    <ul>
+        <% errors.forEach(function(error){ %>
+        <li><%=error.msg%></li>
+        <% }); %>
+    </ul>
+</div>
+<% } %>
+
+<form method="post" action="">
+
+    <input type="hidden" name="id" value="<%=(post_data.id)?post_data.id:''%>">
+
+    <table align="center">
+        <tr>
+            <td align="left">
+                <a href="/"> <i class="fa fa-backward"></i>&nbsp;<span>Back to listing page</span>
+            </td>
+        <tr/>
+        <tr>
+            <td><input type="text" name="name" value="<%=(post_data.name)?post_data.name:''%>" placeholder="Name" ></td>
+        </tr>
+        <tr>
+            <td><input type="email" name="email" value="<%=(post_data.email)?post_data.email:''%>" placeholder="Email" ></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="phone" value="<%=(post_data.phone)?post_data.phone:''%>" placeholder="Phone" ></td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button type="submit" name="btn-save">
+                    <strong>SAVE</strong>
+                </button>
+            </td>
+        </tr>        
+    </table>
+</form>
+        
+<%- include ../layouts/footer.ejs %>

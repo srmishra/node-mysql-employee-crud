@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+</html>
+    <head>
+        <title>Employee CRUD Operations With Nodejs and MySql - By Sam Mishra</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="/js/demo.js"></script>
+    </head>
+    <body>
+    	<center>
+        <div id="header">
+        	<div id="content">
+        		<label>Employee CRUD Operations With Nodejs and MySql - By Sam Mishra</label>
+        	</div>
+        </div>
+        <div id="body">
+        	<div id="content">
+            <% if (flash_messages) { %>
+                <% if (flash_messages.error) { %>
+                <div class="alert-message error"><%=flash_messages.error%></div>
+                <% } %>
+
+                <% if (flash_messages.success) { %>
+                <div class="alert-message success"><%=flash_messages.success%></div>
+                <% } %>
+            <% } %>

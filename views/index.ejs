@@ -1,0 +1,42 @@
+<%- include layouts/header.ejs %>
+
+<table align="center">
+	<tr>
+		<td colspan="6" align="right">
+			<a href="/employees/new"> <i class="fa fa-edit"></i>&nbsp;<span>Add New Employee</span>
+		</td>
+	<tr/>
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th colspan="2">Actions</th>
+	</tr>
+	<% 
+	if(data.length){                                 
+		for(var i = 0;i < data.length;i++) { 
+	%>                 
+    <tr>
+        <td><%=(i+1)%></td>
+        <td><%=data[i].name%></td>
+        <td><%=data[i].phone%></td>
+        <td><a href="mailto:<%=data[i].email%>"><%=data[i].email%></a></td>
+        <td align="center">
+            <a class="a-inside edit" href="/employees/edit/<%=data[i].id%>"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+        </td>
+        <td align="center">   
+            <a class="a-inside delete" href="/employees/delete/<%=data[i].id%>" onclick="return confirm('Are you sure? you want to delete')"><i class="fa fa-times"></i>&nbsp;Delete</a>           
+        </td>
+    </tr>
+    <% 
+    	}            
+	} else { 
+	%>
+	<tr>
+		<td colspan="6">No employees found</td>
+	</tr>
+	<% } %>
+</table>
+
+<%- include layouts/footer.ejs %>
